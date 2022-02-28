@@ -1,0 +1,58 @@
+.activities {
+    width: 100%;
+    height: 20rem;
+    margin-bottom: 2rem;
+    background-color: $background-color;
+    border-radius: 5px;
+    position: relative;
+    &__title {
+        color: $primary-color;
+        position: absolute;
+        top: 3rem;
+        left: 4rem;
+        font-size: 1.2rem;
+    }
+}
+
+// Tooltip
+.tooltipact {
+    display: flex;
+    flex-direction: column;
+    min-width: auto;
+    height: 63px;
+    :nth-child(2) {
+        border-top: 1px solid #ffffff;
+    }
+    &__info {
+        text-align: center;
+        padding: 1.8rem 1rem;
+        color: #ffffff;
+        font-weight: 500;
+        background-color: $secondary-color;
+    }
+}
+
+// Legend
+.legend {
+    position: absolute;
+    bottom: 260px;
+    right: 20px;
+    display: flex;
+    font-weight: 500;
+    color: $tertiary-color;
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+    }
+    &__circle {
+        background: $secondary-color;
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        margin: 0 10px;
+        &--black {
+            background: $primary-color;
+        }
+    }
+}

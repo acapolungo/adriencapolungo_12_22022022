@@ -1,0 +1,30 @@
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-color;
+    height: 5.7rem;
+    padding: 1rem;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    img {
+        width: 11rem;
+        height: 3.75rem;
+        margin-left: 1rem;
+        align-self: flex-start;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

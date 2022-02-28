@@ -1,0 +1,46 @@
+.dashboard {
+    width: 90%;
+    height: 90%;
+    color: $primary-color;
+    margin-top: 4.25rem;
+    margin-left: 7rem;
+    padding-left: 6.8rem;
+    &__info {
+        font-size: 48px;
+        margin-bottom: 77px;
+        p {
+            margin-top: 41px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+    &__name {
+        color: $secondary-color;
+    }
+    &__graph {
+        display: flex;
+    }
+    &__top {
+        width: 100%;
+    }
+    &__bottom {
+        width: 100%;
+        height: 16rem;
+        display: flex;
+        justify-content: space-between;    
+        flex-wrap: wrap;
+    }
+    &__left {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__right {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-content: space-between;
+        flex-wrap: wrap;
+        margin-left: 2rem;
+    }
+}

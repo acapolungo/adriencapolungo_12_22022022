@@ -2,15 +2,14 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
-
 // importData
 import { getUserData } from '../../query';
 import { userMapper } from '../../mapper/userMapper';
 import { userKeyDataMapper } from '../../mapper/userKeyDataMapper';
 
-// importComponent
+// import Component
 import Error404 from '../../components/Error/Error404';
-import UserInf from '../../components/UserInf';
+import UserInf from '../../components/User/UserInf';
 import BarChart from '../../components/Activities/BarChart';
 import LineChart from '../../components/Sessions/LineChart';
 import RadarChart from '../../components/Performance/RadarChart';
@@ -36,7 +35,7 @@ export default function Dashboard() {
     })
   }, [userId])
 
-  console.log(userKeyData)
+  //console.log(userKeyData)
 
   if (parseInt(userId) !== 12 && parseInt(userId) !== 18) { return <Error404 error="Cet utilisateur n'existe pas" /> }
 
@@ -81,6 +80,10 @@ export default function Dashboard() {
           </div>
         </div>
       </section>
-    ) : ""
+    ) : (
+      <div className="sectionloader">
+        <span className="loader loader__circle"></span>
+      </div>
+    )
   )
 }

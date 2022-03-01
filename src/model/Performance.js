@@ -1,11 +1,10 @@
 export default class Performance {
     /**
-     * User Performance Datas
+     * User Performance Class
      *
-     * @param { object } json
-     * @returns { Performance }
+     * @param { number } id
+     * @param { array } data
      */
-    
      constructor(id, data) {
         this.userId = id;
         this.data = data;

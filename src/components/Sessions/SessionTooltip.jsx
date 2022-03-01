@@ -1,9 +1,14 @@
 import React from 'react'
 import { useEffect } from 'react';
 
+/**
+ * Render Tooltip and retrieve coordinate
+ * @param { object }
+ * @return { SessionTooltip }
+ */
 export default function SessionTooltip({ active, payload, setCoor, coordinate }) {
 
-    // avoid badsetState child > parent
+    /** To avoid badSetState child > parent */
     useEffect(() => {
         const returnCoordinate = () => {
             setCoor(coordinate)         

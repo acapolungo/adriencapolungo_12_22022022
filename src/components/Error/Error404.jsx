@@ -1,5 +1,11 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
+/**
+* Component that build the Error in Dashboard component
+* @param { string } error
+* @return { Error404 } 
+*/
 export default function Error404({ error }) {
   return (
     <section className='error'>
@@ -8,3 +14,10 @@ export default function Error404({ error }) {
     </section>
   )
 }
+
+Error404.propTypes = {
+  /**
+  * Dashboard Error
+  */
+   error: PropTypes.string
+};

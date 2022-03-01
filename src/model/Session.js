@@ -1,6 +1,6 @@
 export default class Sessions {
     /**
-     * User Sessions
+     * User Sessions Class
      *
      * @param { number } id
      * @param { array } sessions

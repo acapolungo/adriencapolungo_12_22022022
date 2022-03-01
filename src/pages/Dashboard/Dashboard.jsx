@@ -9,7 +9,7 @@ import { userMapper } from '../../mapper/userMapper';
 import { userKeyDataMapper } from '../../mapper/userKeyDataMapper';
 
 // importComponent
-import Error404 from '../../components/Error404';
+import Error404 from '../../components/Error/Error404';
 import UserInf from '../../components/UserInf';
 import BarChart from '../../components/Activities/BarChart';
 import LineChart from '../../components/Sessions/LineChart';

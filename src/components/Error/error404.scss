@@ -1,0 +1,21 @@
+
+.error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: calc(100vh - 5.7rem);
+        margin-left: 7rem;
+    &__number {
+        font-size: 300px;
+        font-weight: 500;
+        color: $secondary-color;
+    }
+    &__txt {
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 400;
+        color: $primary-color;
+    }
+}

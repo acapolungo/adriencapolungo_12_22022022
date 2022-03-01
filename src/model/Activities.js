@@ -1,6 +1,6 @@
 export default class Activities {
     /**
-     * User Activities Datas
+     * User Activities Class
      *
      * @param { number } id
      * @param { array } sessions

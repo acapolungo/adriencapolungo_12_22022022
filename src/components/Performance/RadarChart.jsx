@@ -11,7 +11,8 @@ import { performanceMapper } from '../../mapper/performanceMapper';
 
 /**
 * Component that build the user's radar chart.
-* @component
+* @return { PerformanceChart }
+* Data for component format data [{String | Number}]
 */
 export default function PerformanceChart() {
 
@@ -32,7 +33,8 @@ export default function PerformanceChart() {
     const data = performance?.data;
     //console.log(data)
 
-    const perf = ["Intensité", "Vitesse", "Force", "Endurance", "energie", "cardio"];
+    /* updating values with an array to match Mock-up Figma */
+    const perf = ["Intensité", "Vitesse", "Force", "Endurance", "Energie", "Cardio"];
     data?.map((el, index) => el.kind = perf[index])
 
     return (

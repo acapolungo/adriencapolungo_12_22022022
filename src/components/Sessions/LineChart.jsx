@@ -39,8 +39,9 @@ export default function SessionChart() {
     averageSessions?.map(el => el.day = dayArr)
 
     /** 
-    * Data for component format
-    * [{name: 'a', value: 12}]
+    * Component that build the user's LineChart.
+    * @return { LineChart }
+    * Data for component format ex : data [{name: 'a', value: 12}]
     */
     return (
         isLoading ? (

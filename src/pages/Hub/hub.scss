@@ -1,20 +1,29 @@
 .hub {
-    width: 80%;
-    color: black;
-    margin-top: 2.5rem;
-    margin-left: 15rem;
-    &__info {
-        font-size: 48px;
+    width: 90%;
+    height: 90%;
+    color: $primary-color;
+    margin-top: 4.25rem;
+    margin-left: 7rem;
+    padding-left: 6.8rem;
+    &__title {
+        font-size: 3.51rem;
         margin-bottom: 41px;
-    }
-    &__link {
-        link {
-            text-decoration: none;
+        font-weight: 700;
+        span {
+            color: $secondary-color;
         }
-        li {
-            list-style-type: none;
-            font-size: 18px;
-            font-weight: 500;
+    }
+    ul {
+        width: 100%;
+        margin-top: 20px;
+        list-style-type: none;
+    }
+    li {
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 10px;
+        a {
+        text-decoration: none;
         }
     }
 }

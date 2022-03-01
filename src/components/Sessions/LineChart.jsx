@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 // Recharts
 import { LineChart, Line, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import SessionTooltip from './SessionTooltip';
-import SessionShape from './SessionShape';
+import SessionCustomizedCursor from '../Sessions/SessionCustomizedCursor';
 
 // importData
 import { getSessionData } from '../../query';
@@ -19,6 +19,7 @@ import { sessionMapper } from '../../mapper/sessionMapper';
 export default function SessionChart() {
 
     const [sessions, setSessions] = useState(null)
+    const [coor, setCoor] = useState(0)
     const [isLoading, setIsLoading] = useState(false);
     const { userId } = useParams();
 
@@ -55,7 +56,7 @@ export default function SessionChart() {
                         margin={{ top: 80, right: 5, bottom: 5, left: 5 }}>
                         <defs>
                             {/** https://github.com/recharts/recharts/issues/407 */}
-                            <linearGradient id="lineColor" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <linearGradient id="whiteLine" x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" stopColor="rgba(255, 255, 255, 0.33)" />
                                 <stop offset="50%" stopColor="rgba(255, 255, 255, 0.66)" />
                                 <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
@@ -65,7 +66,7 @@ export default function SessionChart() {
                         <Line
                             type="natural"
                             dataKey="sessionLength"
-                            stroke="url(#lineColor)"
+                            stroke="url(#whiteLine)"
                             strokeWidth={2}
                             dot={false}
                             activeDot={{
@@ -77,8 +78,8 @@ export default function SessionChart() {
                         {/** https://recharts.org/en-US/api/Tooltip */}
                         {/* https://recharts.org/en-US/api/Rectangle */}
                         <Tooltip
-                            content={<SessionTooltip />}
-                            cursor={<SessionShape />}
+                            content={<SessionTooltip setCoor={setCoor} />}
+                            cursor={<SessionCustomizedCursor coor={coor}/>}
                         />
                         {/**  https://recharts.org/en-US/api/XAxis */}
                         <XAxis
@@ -86,7 +87,8 @@ export default function SessionChart() {
                             stroke="rgba(255, 255, 255, 0.5)"
                             tickLine={false}
                             axisLine={false}
-                            tick={{ fontSize: 12 }}
+                            tick={{ fontSize: 12, fontWeight: 500 }}
+                            dy={5}
                             padding={{ left: 10, right: 10 }}
                         />
                         {/** https://recharts.org/en-US/api/YAxis */}
@@ -94,7 +96,7 @@ export default function SessionChart() {
                         dataKey="sessionLength"
                             hide={true}
                             type="number"
-                            domain={[-10, 'datamax'+10]}
+                            domain={[-15, 'datamax'+15]}
                         />
                     </LineChart>
                 </ResponsiveContainer>

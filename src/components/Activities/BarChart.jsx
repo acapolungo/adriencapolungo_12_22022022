@@ -33,23 +33,6 @@ export default function ActivitiesChart() {
     const sessions = activities?.sessions;
     sessions?.map(el => el.day = dayArray)
 
-    let arrayKilo = [];
-    let arrayCalories = [];
-    let minKilogram = 0;
-    let maxKilogram = 0;
-    let minCalories = 0;
-    let maxCalories = 0;
-
-    // Returns the smallest ans the larget value from the numbers provided to Yaxis domain={[min, max]}.
-    if (isLoading) {
-        arrayKilo = sessions.map(el => el.kilogram);
-        arrayCalories = sessions.map(el => el.calories);
-        minKilogram = Math.min(...arrayKilo);
-        maxKilogram = Math.max(...arrayKilo);
-        minCalories = Math.min(...arrayCalories);
-        maxCalories = Math.max(...arrayCalories);
-    }
-
     //if (parseInt(userId) !== 12 && parseInt(userId) !== 18) { return <Error404 error="Cet utilisateur n'existe pas" /> }
     //if (activities === undefined) { return <Error404 error="il y a eu une erreur lors de l'importation des données" /> }
 
@@ -85,18 +68,17 @@ export default function ActivitiesChart() {
                             axisLine={false}
                             hide={false}
                             tick={{ fontSize: 14 }}
-                            domain={[minKilogram -2, maxKilogram +2]}
+                            domain={['dataMin -2', 'dataMax +2']}  
                         />
                         <YAxis
                             yAxisId="cal"
                             hide={true}
-                            domain={[minCalories -20, maxCalories +20]}
+                            domain={['dataMin -20', 'dataMax +20']}
                         />
                         {/** https://recharts.org/en-US/api/Tooltip */}
                         <Tooltip
                             cursor={{fill: "#c4c4c4" }}
                             content={<ActTooltip />}
-                            //position={{y: 100 }}
                         />
                         {/** https://recharts.org/en-US/api/Legend */}
                         <Legend

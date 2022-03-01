@@ -37,11 +37,12 @@
     }
     &__txt {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         height: 30%;
-        width: 100%;
+        width: auto;
         p {
+            white-space: nowrap;
             color: #ffffff;
             font-size: 12px;
             font-weight: 500;

@@ -1,6 +1,4 @@
 .keydata {
-    width: 100%;
-    max-width: 258px;
     max-height: 124px;
     display: flex;
     align-items: center;
@@ -10,9 +8,10 @@
     font-size: 14px;
     font-weight: 500;
     background-color: $background-color;
-    &:not(:last-child) {
-        margin-bottom: 10%;
+    @include desktop {
+        min-width: 258px;
     }
+
     &__Calories {
         display: flex;
         justify-content: center;

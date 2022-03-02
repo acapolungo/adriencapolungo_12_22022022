@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
-* Component that build the Error in Dashboard component
+* Component that build the Error in Dashboard
 * @param { string } error
 * @return { Error404 } 
 */

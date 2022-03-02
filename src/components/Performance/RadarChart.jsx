@@ -44,7 +44,7 @@ export default function PerformanceChart() {
                 <ResponsiveContainer width="100%" height="100%">
                     {/** https://recharts.org/en-US/api/RadarChart */}
                     <RadarChart
-                        outerRadius={90}
+                        outerRadius={'70%'}
                         data={data} >
                         {/** https://recharts.org/en-US/api/PolarGrid */}
                         <PolarGrid

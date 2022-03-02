@@ -5,7 +5,7 @@ export function userKeyDataMapper(json) {
      * Convert received Json to new class UserScore
      *
      * @param { object } json
-     * @returns { new UserKeyData }
+     * @returns { UserKeyData }
      */
     return new UserKeyData(
         json.id,

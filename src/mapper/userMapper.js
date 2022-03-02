@@ -5,7 +5,7 @@ export function userMapper(json) {
      * Convert received Json to new class User
      *
      * @param { object } json
-     * @returns { new User }
+     * @returns { User }
      */
     return new User(
         json.id,

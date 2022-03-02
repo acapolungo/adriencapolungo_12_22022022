@@ -5,7 +5,7 @@ export function sessionMapper(json) {
      * Convert received Json to new class Sessions
      *
      * @param { object } json
-     * @returns { new Sessions }
+     * @returns { Sessions }
      */
     return new Sessions(
         json.userId,

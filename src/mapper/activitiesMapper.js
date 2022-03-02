@@ -5,7 +5,7 @@ export function activitiesMapper(json) {
      * Convert received Json to new class Activities
      *
      * @param { object } json
-     * @returns { new Activities }
+     * @returns { Activities }
      */
     return new Activities(
         json.userId,

@@ -7,6 +7,7 @@
         height: calc(100vh - 5.7rem);
         margin-left: 7rem;
     &__number {
+        text-align: center;
         font-size: 300px;
         font-weight: 500;
         color: $secondary-color;

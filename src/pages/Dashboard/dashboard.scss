@@ -1,10 +1,12 @@
 .dashboard {
     width: 90%;
-    height: 90%;
     color: $primary-color;
     margin-top: 4.25rem;
-    margin-left: 7rem;
+    margin-left: 2.5rem;
     padding-left: 6.8rem;
+    @include desktop {
+        margin-left: 7rem;
+    }
     &__info {
         font-size: 48px;
         margin-bottom: 77px;

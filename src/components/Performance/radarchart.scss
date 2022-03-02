@@ -3,9 +3,10 @@
     background-color: #282D30;
     border-radius: 5px;
     width: 32%;
-    min-width: 258px;
-    max-height: 263px;
+    height: 253px;
     background-color: $primary-color;
-    font-size: 24px;
-    font-weight: 500;
+    @include desktop {
+        min-width: 258px;
+        max-height: 263px;
+    }
 }

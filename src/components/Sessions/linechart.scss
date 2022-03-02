@@ -2,10 +2,14 @@
     position: relative;
     border-radius: 5px;
     width: 32%;
-    min-width: 258px;
-    max-height: 263px;
+    height: 253px;
     margin-right: 5px;
     background-color: $secondary-color;
+    @include desktop {
+        width: 32%;
+        min-width: 258px;
+        max-height: 263px;
+    }
     &__title {
         position: absolute;
         font-size: 15px;

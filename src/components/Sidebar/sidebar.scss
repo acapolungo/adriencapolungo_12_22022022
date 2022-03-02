@@ -8,14 +8,20 @@
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    width: 7rem;
+    width: 5rem;
     height: 100%;
+    @include desktop {
+        width: 7rem;
+    }
     &__list {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
         height: 70%;
+        @include laptop {
+            height: 60%;
+        }
         button {
             border: none;
             background-color: transparent;
@@ -31,7 +37,10 @@
                 transform: scale(1);
             }
             img {
-                width: 5rem;
+                width: none;
+                @include desktop {
+                    width: 5rem;
+                }
             }
         }
     }
@@ -40,7 +49,9 @@
         justify-content: center;
         align-items: center;
         height: 30%;
-        width: auto;
+        @include laptop {
+            height: 40%;
+        }
         p {
             white-space: nowrap;
             color: #ffffff;

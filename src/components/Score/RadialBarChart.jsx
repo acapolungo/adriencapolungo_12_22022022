@@ -62,15 +62,14 @@ export default function ScoreChart() {
                         {/** https://recharts.org/en-US/api/RadialBar */}
                         <RadialBar
                             background={false}
-                            clockWise={true}
                             dataKey="value"
                             cornerRadius={15}
                             fill="#E60000"
                         />
                         {/** https://recharts.org/en-US/api/Text */}
                         <text
-                            x={50}
-                            y={50}
+                            x={40}
+                            y={30}
                             textAnchor="middle"
                             dominantBaseline="middle"
                             className="scorechart__label">

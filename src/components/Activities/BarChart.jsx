@@ -68,12 +68,13 @@ export default function ActivitiesChart() {
                             axisLine={false}
                             hide={false}
                             tick={{ fontSize: 14 }}
-                            domain={['dataMin -2', 'dataMax +2']}  
+                            tickCount={3}
+                            domain={['auto', 'dataMax']}  
                         />
                         <YAxis
-                            yAxisId="cal"
+                            yAxisId="cal" 
                             hide={true}
-                            domain={['dataMin -20', 'dataMax +20']}
+                            domain={['auto', 'dataMax']}
                         />
                         {/** https://recharts.org/en-US/api/Tooltip */}
                         <Tooltip

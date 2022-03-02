@@ -3,9 +3,12 @@
     background-color: $background-color;
     border-radius: 5px;
     width: 32%;
-    min-width: 258px;
-    max-height: 263px;
+    height: 253px;
     margin-left: 5px;
+    @include desktop {
+        min-width: 258px;
+        max-height: 263px;
+    }
     &__background {
         position: absolute;
         top: 50%;

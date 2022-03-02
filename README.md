@@ -1,3 +1,5 @@
+![alt text](https://github.com/acapolungo/adriencapolungo_12_22022022/blob/route/public/images/Sportsee-logo.png)
+
 # SportSee, un tableau de bord d'analytics avec React.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -41,7 +43,7 @@ There is two URLs available (there is two users in the backend database) :
     Open [User 18](http://localhost:3001/18)
     Open [User 12](http://localhost:3001/12)
 
-### `npm run eject`
+### JSDOC
 
 **Documentation is available throught the project's code and in a dedicated project folder.**
 

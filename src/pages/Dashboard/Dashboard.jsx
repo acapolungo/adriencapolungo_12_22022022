@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { getUserData } from '../../query';
 import { userMapper } from '../../mapper/userMapper';
 import { userKeyDataMapper } from '../../mapper/userKeyDataMapper';
+import { getActivitiesData } from '../../query';
+import { activitiesMapper } from '../../mapper/activitiesMapper';
 
 // import Component
 import Error404 from '../../components/Error/Error404';
@@ -20,35 +22,45 @@ import KeyData from '../../components/Keydata/KeyData';
 export default function Dashboard() {
 
   const [user, setUser] = useState(null)
-  const [userKeyData, setUserKeyData] = useState(null)
+  const [userKeyData, setUserKeyData] = useState({})
+  const [activities, setActivities] = useState({})
+
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const { userId } = useParams();
 
   useEffect(() => {
-    setIsLoading(true);
-    getUserData(userId).then(data => {
-      setUser(userMapper(data))
-      setUserKeyData(userKeyDataMapper(data))
-    }).catch(err => {
-      console.log(err)
-      setIsLoading(false);
+    try {
+      setIsLoading(true);
+      getUserData(userId).then(data => {
+        setUser(userMapper(data))
+        setUserKeyData(userKeyDataMapper(data))
+      })
+      getActivitiesData(userId).then(data => {
+        setActivities(activitiesMapper(data))
     })
+    }
+    catch (err) {
+      console.log(err)
+      setError(err)
+      setIsLoading(false);
+    }
   }, [userId])
 
   //console.log(userKeyData)
 
-  if (parseInt(userId) !== 12 && parseInt(userId) !== 18) { return <Error404 error="Cet utilisateur n'existe pas" /> }
+  if (error) { return <Error404 error="Cet utilisateur n'existe pas" /> }
 
   if (user === undefined) { return <Error404 error="il y a eu une erreur lors de l'importation des données" /> }
 
   return (
-    isLoading ? (
+    isLoading && user && activities ? (
       <section className="dashboard">
-        <UserInf userName={user?.firstName} />
+        <UserInf userName={user.firstName} />
         <div className="dashboard__graph">
           <div className="dashboard__left">
             <div className="dashboard__top">
-              <BarChart />
+              <BarChart data={activities} />
             </div>
             <div className="dashboard__bottom">
               <LineChart />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // recharts
@@ -8,36 +8,36 @@ import ActTooltip from './ActTooltip';
 import LegendAct from './LegendAct';
 
 // importData
-import { getActivitiesData } from '../../query';
-import { activitiesMapper } from '../../mapper/activitiesMapper';
+// import { getActivitiesData } from '../../query';
+// import { activitiesMapper } from '../../mapper/activitiesMapper';
 
-export default function ActivitiesChart() {
+export default function ActivitiesChart({data}) {
 
-    const [activities, setActivities] = useState(null)
-    const [isLoading, setIsLoading] = useState(false);
-    const { userId } = useParams();
+    const [activities, setActivities] = useState([])
+    //const [isLoading, setIsLoading] = useState(false);
+    //const { userId } = useParams();
+
+    // useEffect(() => {
+    //     getActivitiesData(userId).then(data => {
+    //         setActivities(activitiesMapper(data))
+    //         setIsLoading(true);
+    //     }).catch(err => {
+    //         console.log(err)
+    //         setIsLoading(false);
+    //     })
+    // }, [userId]);
 
     useEffect(() => {
-        getActivitiesData(userId).then(data => {
-            setActivities(activitiesMapper(data))
-            setIsLoading(true);
-        }).catch(err => {
-            console.log(err)
-            setIsLoading(false);
-        })
-    }, [userId]);
+        setActivities(data)
+    }, [data]);
 
-    //console.log(activities)
+    console.log(activities)
 
     const dayArray = ["1", "2", "3", "4", "5", "6", "7"];
     const sessions = activities?.sessions;
     sessions?.map(el => el.day = dayArray)
 
-    //if (parseInt(userId) !== 12 && parseInt(userId) !== 18) { return <Error404 error="Cet utilisateur n'existe pas" /> }
-    //if (activities === undefined) { return <Error404 error="il y a eu une erreur lors de l'importation des données" /> }
-
     return (
-        isLoading ? (
             <article className="activities">
                 <h2 className="activities__title">Activité quotidienne</h2>
                 {/** https://recharts.org/en-US/api/ResponsiveContainer */}
@@ -101,7 +101,6 @@ export default function ActivitiesChart() {
                     </BarChart>
                 </ResponsiveContainer>
             </article>
-        ) : ""
     )
 }
 

@@ -1,13 +1,24 @@
 .keydata {
+    width: 100%;
+    gap: 1rem;
     max-height: 124px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    height: 25%;
+    height: 100%;
     border-radius: 5px;
-    padding: 0 32px;
+    padding: 32px;
     font-size: 14px;
     font-weight: 500;
     background-color: $background-color;
+    @include tablet {
+        gap: 0;
+        flex-wrap: nowrap;
+    }
+    @include laptop {
+        height: 25%;
+        min-width: 198px;
+    }
     @include desktop {
         min-width: 258px;
     }
@@ -19,9 +30,11 @@
         width: 3.75rem;
         min-width: 3.75rem;
         height: 3.75rem;
-        border-radius: 5px;
         background-color: rgb(255, 0, 0, 0.1);
+        border-radius: 5px;
         margin-right: 1.5rem;
+        @include tablet {
+        }
     }
     &__Proteines {
         display: flex;

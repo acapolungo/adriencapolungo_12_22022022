@@ -2,8 +2,8 @@
 
 # SportSee, un tableau de bord d'analytics avec React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-The model was created on figma [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=1%3A2).
+This project is create with [Create React App](https://github.com/facebook/create-react-app).
+The model is based on figma [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=1%3A2).
 
 ## Backend API
 
@@ -52,3 +52,5 @@ There is two URLs available (there is two users in the backend database) :
 **Documentation is available throught the project's code and in a dedicated project folder.**
 
 In the 'docs' folder, you'll find an index.html files that you can open in a browser for a better reading experience.
+Creates this projects JSDoc documentation. Destination folder is called docs and it can be found in the root of this project.
+JSDoc configuration can be changed in the jsdoc.json file.

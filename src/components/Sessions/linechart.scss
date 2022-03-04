@@ -1,12 +1,14 @@
 .session {
     position: relative;
     border-radius: 5px;
-    width: 32%;
+    width: 100%;
     height: 253px;
     margin-right: 5px;
     background-color: $secondary-color;
-    @include desktop {
+    @include tablet {
         width: 32%;
+    }
+    @include desktop {
         min-width: 258px;
         max-height: 263px;
     }

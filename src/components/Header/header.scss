@@ -1,13 +1,18 @@
 .header {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: $primary-color;
     height: 5.7rem;
     padding: 1rem;
     z-index: 2;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    @include tablet {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
     img {
         width: 11rem;
         height: 3.75rem;
@@ -15,9 +20,12 @@
         align-self: flex-start;
     }
     nav {
-        display: flex;
-        justify-content: space-around;
-        width: 80%;
+        display: none;
+        @include tablet {
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+        }
         a {
             text-decoration: none;
             color: #ffffff;

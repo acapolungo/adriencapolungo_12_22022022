@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Hub from '../pages/Hub/Hub';
 import Dashboard from '../pages/Dashboard/Dashboard';
 import Error404 from '../components/Error/Error404';
+//import Docs from '../components/Docs';
 
 
 export default function RoutesPath() {
@@ -15,6 +16,7 @@ export default function RoutesPath() {
     <Routes>
       <Route path="/" element={<Hub />} />
       <Route path="/user/:userId" element={<Dashboard />} />
+      {/* <Route path='/docu' component={<Docs />} /> */}
       <Route path="/*" element={<Error404 error="Il y a eu une erreur" />} />
     </Routes>
   )

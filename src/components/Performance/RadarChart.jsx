@@ -6,10 +6,6 @@ import PropTypes from 'prop-types';
 // Recharts
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, Legend, ResponsiveContainer } from 'recharts';
 
-// importData
-// import { getPerformanceData } from '../../query';
-// import { performanceMapper } from '../../mapper/performanceMapper';
-
 /**
 * Component that build the user's radar chart.
 * @param { object } data - props
@@ -20,18 +16,6 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, Legend, ResponsiveContain
 export default function PerformanceChart({ data }) {
 
     const [performance, setPerformance] = useState({})
-    //const [isLoading, setIsLoading] = useState(false);
-    //const { userId } = useParams();
-
-    // useEffect(() => {
-    //     getPerformanceData(userId).then(data => {
-    //         setPerformance(performanceMapper(data))
-    //         setIsLoading(true);
-    //     }).catch(err => {
-    //         console.log(err)
-    //         setIsLoading(false);
-    //     })
-    // }, [userId]);
 
     useEffect(() => {
         setPerformance(data)
@@ -52,9 +36,11 @@ export default function PerformanceChart({ data }) {
                 {/** https://recharts.org/en-US/api/RadarChart */}
                 <RadarChart
                     outerRadius={'70%'}
-                    data={perfData} >
+                    data={perfData}>
+                        
                     {/** https://recharts.org/en-US/api/PolarGrid */}
                     <PolarGrid
+                        //gridType='polygon'
                         radialLines={false}
                     />
                     {/** https://recharts.org/en-US/api/PolarAngleAxis */}
@@ -62,7 +48,7 @@ export default function PerformanceChart({ data }) {
                         dataKey="kind"
                         stroke="#fff"
                         tickLine={false}
-                        ticks={false}
+                        dy={3}
                         tick={{ fontSize: 12, fontWeight: 500 }} />
                     {/** https://recharts.org/en-US/api/Radar */}
                     <Radar

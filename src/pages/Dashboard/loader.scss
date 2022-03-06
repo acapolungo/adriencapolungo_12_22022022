@@ -11,8 +11,8 @@
     @include load;
     animation: load 3s 100ms both;
     .loader {
-        width: rem(120);
-        height: rem(120);
+        width: 7.5rem;
+        height: 7.5rem;
         transform: translate(-50%,-50%);
         position: relative;
         &__circle {

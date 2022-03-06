@@ -6,10 +6,6 @@ import PropTypes from 'prop-types';
 // recharts
 import { ResponsiveContainer, RadialBarChart, RadialBar, PolarAngleAxis } from 'recharts';
 
-// importData
-// import { getUserData } from '../../query';
-// import { userMapper } from '../../mapper/userMapper';
-
 /**
 * Component that build the user's radial bar chart.
 * @param { number } todayscore
@@ -18,18 +14,6 @@ import { ResponsiveContainer, RadialBarChart, RadialBar, PolarAngleAxis } from '
 export default function ScoreChart({ data }) {
 
     const [score, setScore] = useState({})
-    //const [isLoading, setIsLoading] = useState(false);
-    //const { userId } = useParams();
-
-    // useEffect(() => {
-    //     getUserData(userId).then(data => {
-    //         setScore(userMapper(data))
-    //         setIsLoading(true);
-    //     }).catch(err => {
-    //         console.log(err)
-    //         setIsLoading(false);
-    //     })
-    // }, [userId]);
 
     useEffect(() => {
         setScore(data)

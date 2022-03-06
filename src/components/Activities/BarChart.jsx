@@ -1,16 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-//import { useParams } from 'react-router-dom';
 
 // recharts
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import ActTooltip from './ActTooltip';
 import LegendAct from './LegendAct';
-
-// importData
-// import { getActivitiesData } from '../../query';
-// import { activitiesMapper } from '../../mapper/activitiesMapper';
 
 /**
 * Component that build the user's Board activites
@@ -21,18 +16,6 @@ import LegendAct from './LegendAct';
 export default function ActivitiesChart({ data }) {
 
     const [activities, setActivities] = useState({})
-    //const [isLoading, setIsLoading] = useState(false);
-    //const { userId } = useParams();
-
-    // useEffect(() => {
-    //     getActivitiesData(userId).then(data => {
-    //         setActivities(activitiesMapper(data))
-    //         setIsLoading(true);
-    //     }).catch(err => {
-    //         console.log(err)
-    //         setIsLoading(false);
-    //     })
-    // }, [userId]);
 
     useEffect(() => {
         setActivities(data)
@@ -67,7 +50,7 @@ export default function ActivitiesChart({ data }) {
                     />
                     {/** https://recharts.org/en-US/api/YAxis */}
                     <YAxis
-                        yAxisId="kilo"
+                        yAxisId="kg"
                         orientation="right"
                         interval="number"
                         allowDecimals={false}
@@ -94,7 +77,7 @@ export default function ActivitiesChart({ data }) {
                     />
                     {/** https://recharts.org/en-US/api/Bar */}
                     <Bar
-                        yAxisId="kilo"
+                        yAxisId="kg"
                         dataKey="kilogram"
                         radius={[50, 50, 0, 0]}
                         fill="#000000"
@@ -117,7 +100,7 @@ ActivitiesChart.propTypes = {
     */
     data: PropTypes.shape({
         userId: PropTypes.number,
-        sessions : PropTypes.array
+        sessions : PropTypes.array 
     })
 };
 

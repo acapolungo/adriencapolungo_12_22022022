@@ -81,7 +81,7 @@ export default function Dashboard() {
     isLoading ? (
       <section className="dashboard">
         {user &&
-          <UserInf userName={user.firstName} />
+          <UserInf userName={user.firstName}/>
         }
         <div className="dashboard__graph">
           <div className="dashboard__left">

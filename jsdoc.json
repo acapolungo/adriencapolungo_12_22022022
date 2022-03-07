@@ -1,8 +1,8 @@
 {
     "source": {
         "include": ["src"],
-        "includePattern": "js$",
-        "excludePattern": "(node_modules/|docs)"
+        "includePattern": ".+\\.js(doc|x)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
     },
     "plugins": [
         "plugins/markdown",

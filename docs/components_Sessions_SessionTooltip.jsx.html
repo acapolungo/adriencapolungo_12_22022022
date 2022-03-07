@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: model/Session.js</title>
+    <title>JSDoc: Source: components/Sessions/SessionTooltip.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: model/Session.js</h1>
+    <h1 class="page-title">Source: components/Sessions/SessionTooltip.jsx</h1>
 
     
 
@@ -26,18 +26,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>export default class Sessions {
-    /**
-     * User Sessions Class
-     *
-     * @param { number } id
-     * @param { array } sessions
-     */
+            <pre class="prettyprint source linenums"><code>import React from 'react'
+import { useEffect } from 'react';
 
-    constructor(id, sessions) {
-        this.userId = id;
-        this.sessions = sessions;
+/**
+ * Render Tooltip and retrieve coordinate
+ * @param { object }
+ * @return { SessionTooltip }
+ */
+export default function SessionTooltip({ active, payload, setCoor, coordinate }) {
+
+    /** To avoid badSetState child > parent */
+    useEffect(() => {
+        const returnCoordinate = () => {
+            setCoor(coordinate)         
+        }
+        returnCoordinate()
+      }, [coordinate, setCoor]);
+
+    if (active &amp;&amp; payload &amp;&amp; payload.length) {
+
+        return (
+            &lt;div className="sessiontooltip">
+                &lt;p className="sessiontooltip__txt">{`${payload[0].value} min`}&lt;/p>
+            &lt;/div>
+        )
     }
+    return null;
 }</code></pre>
         </article>
     </section>

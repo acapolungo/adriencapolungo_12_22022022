@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: model/Session.js</title>
+    <title>JSDoc: Source: components/Sessions/SessionCustomizedCursor.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: model/Session.js</h1>
+    <h1 class="page-title">Source: components/Sessions/SessionCustomizedCursor.jsx</h1>
 
     
 
@@ -26,19 +26,35 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>export default class Sessions {
-    /**
-     * User Sessions Class
-     *
-     * @param { number } id
-     * @param { array } sessions
-     */
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import PropTypes from "prop-types";
 
-    constructor(id, sessions) {
-        this.userId = id;
-        this.sessions = sessions;
-    }
-}</code></pre>
+// Recharts Shape
+import { Rectangle } from 'recharts';
+
+/**
+ * Custom Cursor, place a rectangle at the mouse position
+ * @param { object }
+ * @return { SessionShape }
+ */
+/** https://recharts.org/en-US/api/Rectangle */
+export default function SessionShape({ coor }) {
+    const { x } = coor;
+    //console.log(coor)
+    return (
+        &lt;Rectangle fill="rgba(0, 0, 0, 0.1)" width={x+400} height={260} x={x} />
+    )
+}
+
+SessionShape.propTypes = {
+    /**
+    * Cursor coordinate
+    */
+    x: PropTypes.number,
+    y: PropTypes.number
+}
+
+</code></pre>
         </article>
     </section>
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Sessions/LineChart.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Sessions/LineChart.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react'
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+//import { useParams } from 'react-router-dom';
+
+// Recharts
+import { LineChart, Line, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import SessionTooltip from './SessionTooltip';
+import SessionCustomizedCursor from '../Sessions/SessionCustomizedCursor';
+
+/**
+ * Component that build the user's session time chart.
+ * @param { number } data.userId
+ * @param { array } data.sessions
+ * @return { LineChart }
+ */
+export default function SessionChart({ data }) {
+
+    const [sessions, setSessions] = useState({})
+    const [coor, setCoor] = useState(0)
+
+    useEffect(() => {
+        setSessions(data)
+    }, [data]);
+
+    //console.log(sessions)
+
+    const dayArr = ["L", "M", "M", "J", "V", "S", "D"];
+    const averageSessions = sessions?.sessions;
+    averageSessions?.map(el => el.day = dayArr)
+
+    return (
+        &lt;article className="session">
+            &lt;h2 className="session__title">Durée moyenne des&lt;br />sessions&lt;/h2>
+            {/** https://recharts.org/en-US/api/ResponsiveContainer */}
+            &lt;ResponsiveContainer width="100%" height="100%">
+                {/** https://recharts.org/en-US/api/LineChart */}
+                &lt;LineChart
+                    width={300}
+                    height={300}
+                    data={averageSessions}
+                    margin={{ top: 80, right: 5, bottom: 5, left: 5 }}>
+                    &lt;defs>
+                        {/** https://github.com/recharts/recharts/issues/407 */}
+                        &lt;linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            &lt;stop offset="0%" stopColor="rgba(255, 255, 255, 0.33)" />
+                            &lt;stop offset="50%" stopColor="rgba(255, 255, 255, 0.66)" />
+                            &lt;stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
+                        &lt;/linearGradient>
+                    &lt;/defs>
+                    {/** https://recharts.org/en-US/api/Line */}
+                    &lt;Line
+                        type="natural"
+                        dataKey="sessionLength"
+                        stroke="url(#gradient)"
+                        strokeWidth={2}
+                        dot={false}
+                        activeDot={{
+                            stroke: "rgba(255, 255, 255, 0.25)",
+                            r: 5,
+                            fill: "#fff"
+                        }}
+                    />
+                    {/** https://recharts.org/en-US/api/Tooltip */}
+                    {/* https://recharts.org/en-US/api/Rectangle */}
+                    &lt;Tooltip
+                        content={&lt;SessionTooltip setCoor={setCoor} />}
+                        cursor={&lt;SessionCustomizedCursor coor={coor} />}
+                    />
+                    {/**  https://recharts.org/en-US/api/XAxis */}
+                    &lt;XAxis
+                        dataKey={"day"}
+                        stroke="rgba(255, 255, 255, 0.5)"
+                        tickLine={false}
+                        axisLine={false}
+                        tick={{ fontSize: 12, fontWeight: 500 }}
+                        dy={5}
+                        padding={{ left: 10, right: 10 }}
+                    />
+                    {/** https://recharts.org/en-US/api/YAxis */}
+                    &lt;YAxis
+                        dataKey="sessionLength"
+                        hide={true}
+                        type="number"
+                        domain={[-15, 'datamax' + 15]}
+                    />
+                &lt;/LineChart>
+            &lt;/ResponsiveContainer>
+        &lt;/article>
+    )
+}
+
+SessionChart.propTypes = {
+    /**
+    * user average session Data
+    */
+    data: PropTypes.shape({
+        userId: PropTypes.number,
+        sessions: PropTypes.array
+    })
+};</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module.exports_module.exports.html">exports</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getActivitiesData">getActivitiesData</a></li><li><a href="global.html#getPerformanceData">getPerformanceData</a></li><li><a href="global.html#getSessionData">getSessionData</a></li><li><a href="global.html#getUserData">getUserData</a></li><li><a href="global.html#readParam">readParam</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Mar 07 2022 17:38:33 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

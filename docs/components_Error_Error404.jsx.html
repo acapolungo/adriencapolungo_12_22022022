@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: model/Session.js</title>
+    <title>JSDoc: Source: components/Error/Error404.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: model/Session.js</h1>
+    <h1 class="page-title">Source: components/Error/Error404.jsx</h1>
 
     
 
@@ -26,19 +26,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>export default class Sessions {
-    /**
-     * User Sessions Class
-     *
-     * @param { number } id
-     * @param { array } sessions
-     */
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import PropTypes from 'prop-types';
 
-    constructor(id, sessions) {
-        this.userId = id;
-        this.sessions = sessions;
-    }
-}</code></pre>
+/**
+* Component that build the Error in Dashboard
+* @param { string } error
+* @return { Error404 } 
+*/
+export default function Error404({ error }) {
+  return (
+    &lt;section className='error'>
+      &lt;div className='error__number'>404&lt;span className='error__txt'>Oups... {error}&lt;/span>
+      &lt;/div>
+    &lt;/section>
+  )
+}
+
+Error404.propTypes = {
+  /**
+  * Dashboard Error
+  */
+   error: PropTypes.string
+};
+</code></pre>
         </article>
     </section>
 

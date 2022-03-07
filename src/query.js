@@ -1,11 +1,11 @@
 
 
 /**
- * Function to call Param of path URL
- *
+ * Function to call Param of path URL,
+ * replace PARAM for API or Mocked data in env.development
  * @param { string } envVar
  * @param { number } id
- * @return { URL }
+ * @return { param }
  */
 const readParam = (envVar, id) => {
     let param = envVar.replace('%PARAM%', id);
@@ -15,10 +15,10 @@ const readParam = (envVar, id) => {
 }
 
 /**
- * Fetch API data or Mock data
- *
+ * Fetch promise for user data
  * @param { number } userId
- * @return { data, error }
+ * @return { data }
+ * @return { err }
  */
 export async function getUserData(userId) {
     const envUrlUser = `${process.env.REACT_APP_API}${process.env.REACT_APP_GET_USER_DATA}`;
@@ -34,6 +34,11 @@ export async function getUserData(userId) {
     }
 }
 
+/**
+ * Fetch promise for user activity data
+ * @param { number } userId
+ * @return { data }
+ */
 export async function getActivitiesData(userId) {
     const envUrlActivity = `${process.env.REACT_APP_API}${process.env.REACT_APP_GET_USER_ACTIVITY}`;
 
@@ -44,6 +49,11 @@ export async function getActivitiesData(userId) {
     return data
 }
 
+/**
+ * Fetch promise for user sessions data
+ * @param { number } userId
+ * @return { data }
+ */
 export async function getSessionData(userId) {
     const envUrlSessions = `${process.env.REACT_APP_API}${process.env.REACT_APP_GET_USER_SESSIONS}`;
     
@@ -54,6 +64,11 @@ export async function getSessionData(userId) {
     return data
 }
 
+/**
+ * Fetch promise for user performance data
+ * @param { number } userId
+ * @return { data }
+ */
 export async function getPerformanceData(userId) {
     const envUrlPerf = `${process.env.REACT_APP_API}${process.env.REACT_APP_GET_USER_PERFORMANCE}`;
     
@@ -69,7 +84,7 @@ export async function getPerformanceData(userId) {
  * Fetch Mocked Data
  *
  * @param { number } userId
- * @return { data, error }
+ * @return { data }
  */
 // export async function getUserData(userId) {
 //     try {
@@ -103,7 +118,7 @@ export async function getPerformanceData(userId) {
  * Fetch API Data
  *
  * @param { number } userId
- * @return { data, error }
+ * @return { data }
  */
 // export async function getUserData(userId) {
 //     try {

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: model/Session.js</title>
+    <title>JSDoc: Source: components/Keydata/KeyData.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: model/Session.js</h1>
+    <h1 class="page-title">Source: components/Keydata/KeyData.jsx</h1>
 
     
 
@@ -26,19 +26,45 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>export default class Sessions {
-    /**
-     * User Sessions Class
-     *
-     * @param { number } id
-     * @param { array } sessions
-     */
+            <pre class="prettyprint source linenums"><code>import React from 'react'
+import PropTypes from 'prop-types';
 
-    constructor(id, sessions) {
-        this.userId = id;
-        this.sessions = sessions;
-    }
-}</code></pre>
+/**
+* Component that build the user's key datas in right section.
+* @param { string } name
+* @param { string } logo
+* @param { string } count
+* @return { KeyData }
+*/
+export default function KeyData({ name, picture, count }) {
+  return (
+    &lt;article className="keydata">
+      &lt;div className={`keydata__${name}`}>
+        &lt;img src={`${process.env.PUBLIC_URL}/images/${picture}.png`} alt={name} />
+      &lt;/div>
+      &lt;div>
+        &lt;p className="keydata__count">{count}&lt;/p>
+        &lt;p className="keydata__name">{name}&lt;/p>
+      &lt;/div>
+    &lt;/article>
+  )
+}
+
+KeyData.propTypes = {
+  /**
+  * Data name
+  */
+  name: PropTypes.string,
+  /**
+  * Data picture
+  */
+  picture: PropTypes.string,
+  /**
+  * data value
+  */
+  count: PropTypes.string,
+};
+</code></pre>
         </article>
     </section>
 

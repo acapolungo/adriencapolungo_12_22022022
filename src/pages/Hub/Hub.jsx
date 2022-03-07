@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Hub() {
 
-  console.log(process.env.NODE_ENV)
+  //console.log(process.env.NODE_ENV)
 
   return (
     <section className="hub">

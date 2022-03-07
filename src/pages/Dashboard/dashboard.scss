@@ -1,0 +1,72 @@
+.dashboard {
+    height: 100%;
+    padding: 1rem;
+    color: $primary-color;
+    padding-bottom: 8rem;
+    
+    @include tablet {
+        margin-top: 4.25rem;
+        margin-left: 7rem;
+        padding-left: 3.8rem;
+        padding-right: 3.5rem;
+        padding-bottom: 0rem;
+    }
+    @include desktop {
+        padding-left: 6.8rem;
+        padding-right: 3.5rem;
+        margin-left: 7rem;
+    }
+    &__info {
+        font-size: 48px;
+        margin-bottom: 77px;
+        p {
+            margin-top: 41px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+    &__name {
+        color: $secondary-color;
+    }
+    &__graph {
+        display: flex;
+        flex-wrap: wrap;
+        @include laptop {
+            flex-wrap: nowrap;
+        }
+    }
+    &__top {
+        width: 100%;
+    }
+    &__bottom {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        @include tablet {
+            gap: 0;
+        }
+    }
+    &__left {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        @include laptop {
+            width: 80%;
+        }
+    }
+    &__right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        @include laptop {
+            margin-top: 0;
+            margin-left: 2rem;
+            width: 20%;
+        }
+    }
+}

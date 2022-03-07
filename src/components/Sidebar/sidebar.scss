@@ -1,0 +1,85 @@
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    background-color: $primary-color;
+    @include tablet {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: $primary-color;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 5rem;
+        height: 100%;
+        width: 7rem;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 70%;
+        }
+        @include laptop {
+            height: 60%;
+        }
+        button {
+            border: none;
+            background-color: transparent;
+            transition: transform 0.1s ease;
+            @include tablet {
+                &:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+            &:active {
+                transform: scale(1);
+            }
+            img {
+                width: none;
+                @include desktop {
+                    width: 5rem;
+                }
+            }
+        }
+    }
+    &__txt {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        @include tablet {
+            justify-content: center;
+            align-items: center;
+            height: 30%;
+        }
+        @include laptop {
+            height: 40%;
+        }
+        p {
+            white-space: nowrap;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 500;
+            padding-bottom: 1rem;
+            @include tablet {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}

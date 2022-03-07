@@ -1,0 +1,13 @@
+@import './base.scss';
+@import './Utils//Mixins.scss';
+@import '../components/Header/header.scss';
+@import '../components/Sidebar/sidebar.scss';
+@import '../components/Error/error404.scss';
+@import '../pages/Dashboard/dashboard.scss';
+@import '../pages/Dashboard/loader.scss';
+@import '../pages/Hub/hub.scss';
+@import '../components/Activities/activitieschart.scss';
+@import '../components/Sessions/linechart.scss';
+@import '../components/Performance/radarchart.scss';
+@import '../components/Score/scorechart.scss';
+@import '../components/Keydata/KeyData.scss';

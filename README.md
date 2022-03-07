@@ -3,11 +3,11 @@
 # SportSee, un tableau de bord d'analytics avec React.
 
 This project is create with [Create React App](https://github.com/facebook/create-react-app).
-The model is based on figma [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=1%3A2).
+The model is based on this [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=1%3A2).
 
 ## Backend API
 
-This project runs using an API. To launch the API, go to the following repo and follow the instructions (port used by the API must be 3000) :
+This project runs using an API. To launch the API, go to the following repo and follow the instructions (port 3000 used by the API !) :
 
 [Backend](https://github.com/Alphasud/P9-front-end-dashboard)
 Run the API first to start this project.
@@ -20,11 +20,11 @@ Run the API first to start this project.
 * Install the packages with Yarn and npm : npm i yarn install
 * Run the project : npm start or yarn start
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 You may also see any lint errors in the console.
 
 ### Dependencies
@@ -40,17 +40,21 @@ You may also see any lint errors in the console.
     "better-docs": "^2.7.2",
     "jsdoc": "^3.6.10"
 
-### URL
+### URL available
 
 There is two URLs available (there is two users in the backend database) :
-    Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
-    Open [User 18](http://localhost:3001/18) or link in Hub
-    Open [User 12](http://localhost:3001/12) or link in Hub
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.  
+Open [User 18](http://localhost:3001/18) or link in Hub  
+Open [User 12](http://localhost:3001/12) or link in Hub  
 
 ### JSDOC
 
 **Documentation is available throught the project's code and in a dedicated project folder.**
 
+Destination folder is called docs and it can be found in the root of this project.
+Here :
+Find the documentation here [JSDoc documentation Sportsee](https://github.com/acapolungo/adriencapolungo_12_22022022/tree/main/docs).
 In the 'docs' folder, you'll find an index.html files that you can open in a browser for a better reading experience.
-Creates this projects JSDoc documentation. Destination folder is called docs and it can be found in the root of this project.
 JSDoc configuration can be changed in the jsdoc.json file.
+
+

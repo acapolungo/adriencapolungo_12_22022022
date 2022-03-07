@@ -34,8 +34,8 @@ export default function ScoreChart({ data }) {
             <ResponsiveContainer height="100%" width="100%">
                 {/** https://recharts.org/en-US/api/RadialBarChart */}
                 <RadialBarChart
-                    cx="50%"
-                    cy="50%"
+                    cx="50%" // by default
+                    cy="50%" // by default
                     innerRadius={86}
                     outerRadius={100}
                     barSize={12}
@@ -47,13 +47,13 @@ export default function ScoreChart({ data }) {
                     <PolarAngleAxis
                         type="number"
                         domain={[0, 100]}
-                        angleAxisId={0}
+                        angleAxisId={0} // multiple bar axis
                         tick={false}
                     />
                     {/** https://recharts.org/en-US/api/RadialBar */}
                     <RadialBar
                         background={false}
-                        dataKey="value"
+                        dataKey={"value"}
                         cornerRadius={15}
                         fill="#E60000"
                     />
